@@ -1,83 +1,24 @@
-## 📊 Previsão de Demanda de Aluguéis de Bicicletas utilizando Redes Neurais Recorrentes (RNN)
+# 📊 Previsão de Demanda de Aluguel de Bicicletas em Dublin usando Redes Neurais Recorrentes (RNN)
 
-## 📌 Objetivo
-Este projeto tem como objetivo prever a demanda diária de bicicletas compartilhadas em Dublin utilizando modelos de Deep Learning baseados em séries temporais. A previsão de demanda pode ajudar operadores de mobilidade urbana a otimizar alocação de bicicletas, planejamento operacional e manutenção.
+## 📌 Descrição do Projeto
+Este projeto tem como objetivo prever a demanda diária de aluguel de bicicletas em Dublin utilizando modelos de Deep Learning baseados em séries temporais.
 
----
-
-## 📂 Dataset
-O dataset contém registros diários de utilização do sistema público de bicicletas de Dublin.
-
-Principais variáveis analisadas:
-- Data
-- Número total de viagens
-- Distribuição temporal das viagens
+A previsão de demanda pode ajudar empresas de mobilidade urbana a otimizar a distribuição de bicicletas, planejar manutenção e melhorar a experiência dos usuários.
 
 ---
 
-## ⚙️ Processamento de Dados
-O processamento de dados foi realizado utilizando tecnologias de Big Data.
+## 🎯 Problema de Negócio (Business Problem)
 
-Etapas:
-- Ingestão de dados com **PySpark**
-- Armazenamento em **Hadoop HDFS**
-- Limpeza e transformação de dados
-- Agregação de viagens por dia
+Sistemas de compartilhamento de bicicletas precisam prever a demanda futura para garantir que bicicletas estejam disponíveis nos locais corretos.
 
----
+Previsões precisas permitem:
 
-## 🔎 Análise Exploratória de Dados (EDA)
+- melhor distribuição de bicicletas
+- planejamento de operações
+- redução de custos operacionais
+- melhor experiência para usuários
 
-Foram realizadas análises para entender o comportamento da demanda:
-
-- Estatísticas descritivas
-- Análise de distribuição
-- Detecção de outliers
-- Análise de tendência e sazonalidade
-- Decomposição de séries temporais
-
-Visualizações utilizadas:
-
-- Histogramas
-- Boxplots
-- Scatter plots
-- Decomposição temporal
-
----
-
-## 🤖 Modelos de Machine Learning
-
-Foram desenvolvidos três modelos baseados em redes neurais recorrentes:
-
-- **Simple LSTM**
-- **LSTM com otimização de hiperparâmetros**
-- **GRU (Gated Recurrent Unit)**
-
-Os modelos foram implementados utilizando:
-
-- **TensorFlow**
-- **Keras**
-
----
-
-## 📈 Avaliação dos Modelos
-
-A performance foi avaliada utilizando a métrica:
-
-**RMSE (Root Mean Squared Error)**
-
-Comparação entre:
-
-- dataset de treino
-- dataset de teste
-
----
-
-## 🚀 Resultados
-
-O modelo **GRU** apresentou melhor desempenho na previsão da demanda diária, demonstrando maior capacidade de capturar dependências temporais da série.
-
-Observou-se forte padrão de **sazonalidade**, com maior uso durante meses mais quentes e dias úteis.
+Neste projeto, utilizamos **Redes Neurais Recorrentes (RNN)** para prever o número de viagens diárias.
 
 ---
 
@@ -85,7 +26,7 @@ Observou-se forte padrão de **sazonalidade**, com maior uso durante meses mais 
 
 - Python
 - PySpark
-- Hadoop
+- Apache Hadoop
 - TensorFlow
 - Keras
 - Matplotlib
@@ -93,11 +34,76 @@ Observou-se forte padrão de **sazonalidade**, com maior uso durante meses mais 
 
 ---
 
-## 🔮 Melhorias Futuras
+## 📂 Dataset
 
-Possíveis melhorias para aumentar a precisão do modelo:
+O dataset contém registros diários de uso do sistema de bicicletas compartilhadas em Dublin.
 
-- inclusão de **dados meteorológicos**
-- inclusão de **feriados e eventos**
-- utilização de **modelos híbridos**
+Os dados foram processados utilizando **PySpark** e armazenados no **Hadoop Distributed File System (HDFS)**.
+
+Principais etapas de processamento:
+
+- limpeza dos dados
+- conversão de timestamps
+- agregação de viagens por dia
+
+---
+
+## 🔎 Análise Exploratória (EDA)
+
+Durante a análise exploratória foram avaliados:
+
+- tendência da série temporal
+- padrões de sazonalidade
+- distribuição da demanda diária
+- identificação de outliers
+
+Também foi realizada **decomposição da série temporal** para separar:
+
+- tendência
+- sazonalidade
+- ruído
+
+---
+
+## 🤖 Modelos Utilizados
+
+Foram treinados três modelos de Deep Learning:
+
+**1️⃣ LSTM Simples**
+- uma camada LSTM
+- arquitetura básica
+
+**2️⃣ LSTM com otimização**
+- múltiplas camadas
+- regularização com dropout
+- ajuste de hiperparâmetros
+
+**3️⃣ GRU**
+- arquitetura similar ao LSTM otimizado
+- menor complexidade computacional
+
+---
+
+## 📈 Métrica de Avaliação
+
+A performance dos modelos foi avaliada utilizando:
+
+**RMSE (Root Mean Squared Error)**
+
+Esta métrica mede a diferença entre os valores previstos e os valores reais.
+
+---
+
+## 🚀 Resultados
+
+O modelo **GRU apresentou o menor RMSE**, indicando melhor capacidade de capturar dependências temporais da série.
+
+Mesmo assim, os resultados indicam que a inclusão de mais variáveis pode melhorar a precisão.
+
+---
+
+## ⚙️ Como Executar o Projeto
+
+1️⃣ Clonar o repositório
+delos híbridos**
 - tuning mais avançado de hiperparâmetros
